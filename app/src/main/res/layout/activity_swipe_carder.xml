@@ -7,13 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="kfive.com.androidnano.NanoHome">
+    tools:context="kfive.com.androidnano.SwipeCarder.SwipeCarderActivity">
+    <com.lorentzos.flingswipe.SwipeFlingAdapterView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/swipe_frame"
+        android:layout_centerInParent="true">
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Swipe Carder"
-        android:id="@+id/button"
-        android:onClick="startSwipeCarder" />
+    </com.lorentzos.flingswipe.SwipeFlingAdapterView>
+
 </RelativeLayout>
