@@ -5,6 +5,6 @@ set mytime=%time%
 echo Current time is %mydate%:%mytime%
 
 git add --all
-git commit -am'%mydate%:%mytime%
-git push
+git commit -m'Backup-Commit=%mydate%:%mytime%'
+git push origin
 pause
