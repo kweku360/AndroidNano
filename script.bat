@@ -6,5 +6,5 @@ echo Current time is %mydate%:%mytime%
 
 git add --all
 git commit -m'Backup-Commit=%mydate%:%mytime%'
-git push origin >> gitlogs.txt
+git push origin > gitlogs.txt
 pause
