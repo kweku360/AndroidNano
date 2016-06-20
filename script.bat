@@ -8,4 +8,3 @@ git commit -m'Backup-Commit=%mydate%:%mytime%'
 git push origin
 echo Backup successfull on %mydate%:%mytime% >> gitlogs.txt
 echo ------------------------- >> gitlogs.txt
-pause
