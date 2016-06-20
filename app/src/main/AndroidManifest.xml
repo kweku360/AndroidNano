@@ -15,7 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SwipeCarder.SwipeCarderActivity"></activity>
+        <activity android:name=".SwipeCarder.SwipeCarderActivity" />
+        <activity android:name=".AppLister.ApplistMain" />
+        <activity android:name=".AppVault.AppVaultMain" />
+        <activity android:name=".budplayer.BmPlayer"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="80dp"
+    android:layout_height="100dp"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/al_appicon"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:id="@+id/al_appname"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:textStyle="normal"
+        android:textSize="11dp"
+        android:layout_marginTop="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp" />
+</LinearLayout>

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import kfive.com.androidnano.AppLister.ApplistMain;
 import kfive.com.androidnano.SwipeCarder.SwipeCarderActivity;
 
 public class NanoHome extends AppCompatActivity {
@@ -18,6 +19,10 @@ public class NanoHome extends AppCompatActivity {
 
     public void startSwipeCarder(View v) {
         Intent intent = new Intent(this, SwipeCarderActivity.class);
+        startActivity(intent);
+    }
+    public void startAppList(View v) {
+        Intent intent = new Intent(this, ApplistMain.class);
         startActivity(intent);
     }
 
