@@ -14,6 +14,6 @@ public class AllSongs {
     }
 
     public void showAllMusic(){
-        ContentResolver
+
     }
 }
