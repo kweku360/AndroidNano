@@ -1,5 +1,6 @@
 package kfive.com.androidnano.SwipeCarder;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,14 +25,15 @@ public class SwipeCarderActivity extends AppCompatActivity {
     private void showSwipeCard() {
         SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.swipe_frame);
 
-        final ArrayList al = new ArrayList<String>();
-        al.add("php");
-        al.add("c");
-        al.add("python");
-        al.add("java");
+        final ArrayList al = new ArrayList<Drawable>();
+        al.add(getResources().getDrawable(R.drawable.a1));
+        al.add(getResources().getDrawable(R.drawable.a2));
+        al.add(getResources().getDrawable(R.drawable.a3));
+        al.add(getResources().getDrawable(R.drawable.a4));
+        al.add(getResources().getDrawable(R.drawable.a5));
 
         //choose your favorite adapter
-        final ArrayAdapter arrayAdapter = new ArrayAdapter<String>(this, R.layout.swipeitem, R.id.swipetxt, al );
+        final ArrayAdapter arrayAdapter = new ArrayAdapter<String>(this, R.layout.swipeitem, R.id.swipeimg, al );
 
         //set the listener and the adapter
         flingContainer.setAdapter(arrayAdapter);
