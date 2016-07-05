@@ -34,9 +34,10 @@ public class SwipeCarderActivity extends AppCompatActivity {
 
         //choose your favorite adapter
         final ArrayAdapter arrayAdapter = new ArrayAdapter<String>(this, R.layout.swipeitem, R.id.swipeimg, al );
+        final ImageAdapter imageAdapter = new ImageAdapter(al,this);
 
         //set the listener and the adapter
-        flingContainer.setAdapter(arrayAdapter);
+        flingContainer.setAdapter(imageAdapter);
 
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
             @Override
@@ -44,7 +45,7 @@ public class SwipeCarderActivity extends AppCompatActivity {
                 // this is the simplest way to delete an object from the Adapter (/AdapterView)
                 Log.d("LIST", "removed object!");
                 al.remove(0);
-                arrayAdapter.notifyDataSetChanged();
+                imageAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -60,8 +61,8 @@ public class SwipeCarderActivity extends AppCompatActivity {
             @Override
             public void onAdapterAboutToEmpty(int i) {
                 // Ask for more data here
-                al.add("XML ".concat(String.valueOf(i)));
-                arrayAdapter.notifyDataSetChanged();
+                al.add(getResources().getDrawable(R.drawable.a4));
+                imageAdapter.notifyDataSetChanged();
                 Log.d("LIST", "notified");
                 i++;
             }
