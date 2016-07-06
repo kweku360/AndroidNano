@@ -4,7 +4,13 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
@@ -15,15 +21,17 @@ import kfive.com.androidnano.R;
 
 public class SwipeCarderActivity extends AppCompatActivity {
 
+   // ImageView textimg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swipe_carder);
+       // textimg = (ImageView)findViewById(R.id.imageView);
         showSwipeCard();
     }
 
     private void showSwipeCard() {
-        SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.swipe_frame);
+        final SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.swipe_frame);
 
         final ArrayList al = new ArrayList<Drawable>();
         al.add(getResources().getDrawable(R.drawable.a1));
@@ -69,6 +77,15 @@ public class SwipeCarderActivity extends AppCompatActivity {
 
             @Override
             public void onScroll(float v) {
+
+                Log.d("Scr", String.valueOf(v));
+                if(v < 0){
+                    flingContainer.getSelectedView().findViewById(R.id.imageView).setAlpha(0);
+                    flingContainer.getSelectedView().findViewById(R.id.imageView2).setAlpha(-(v));
+                }else{
+                    flingContainer.getSelectedView().findViewById(R.id.imageView2).setAlpha(0);
+                    flingContainer.getSelectedView().findViewById(R.id.imageView).setAlpha(v);
+                }
 
             }
         });
