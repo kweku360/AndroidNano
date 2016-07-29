@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PixelFormat;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -29,10 +30,13 @@ public class CanvasDrawer extends SurfaceView implements Runnable {
 
     float loc_x = 1;
     int loc_y = 1, loc_y1 = 1, loc_y2 = 1, loc_y3 = 1, loc_y4 = 1;
+    int y=0,y1=4,y2=3,y3=2,y4=1;
 
     public CanvasDrawer(Context context) {
         super(context);
         sHolder = getHolder();
+        setZOrderOnTop(true);
+        sHolder.setFormat(PixelFormat.TRANSLUCENT);
         dove = BitmapFactory.decodeResource(getResources(), R.drawable.an_dove);
         love = BitmapFactory.decodeResource(getResources(), R.drawable.an_love);
         hearts = BitmapFactory.decodeResource(getResources(), R.drawable.an_hearts);
@@ -53,73 +57,65 @@ public class CanvasDrawer extends SurfaceView implements Runnable {
             float w = metrics.widthPixels;
             float h = metrics.heightPixels;
 
-//            loc_y = (loc_y > h)? 10:loc_y + getRandom();
-//            loc_y1 = (loc_y1 > h)? 10:loc_y1 + getRandom();
-//            loc_y2 = (loc_y2 > h)? 10:loc_y2 + getRandom();
-//            loc_y3 = (loc_y3 > h)? 10:loc_y3 + getRandom();
-//            loc_y4 = (loc_y4 > h)? 10:loc_y4 + getRandom();
-
-//            loc_y = (loc_y > h)? 10:loc_y + 7;
-//            loc_y1 = (loc_y1 > h)? 10:loc_y1 + 9;
-//            loc_y2 = (loc_y2 > h)? 10:loc_y2 + 5;
-//            loc_y3 = (loc_y3 > h)? 10:loc_y3 + 11;
-//            loc_y4 = (loc_y4 > h)? 10:loc_y4 + 13;
-
-            if(loc_y > h){
-                loc_y = 10;
-                dove = getRandom();
-            }else {
-               loc_y = loc_y + 7;
-            }
-            if(loc_y2 > h){
-                loc_y2 = 10;
-                love = getRandom();
-            }else {
-               loc_y2 = loc_y2 + 9;
-            }
-            if(loc_y3 > h){
-                loc_y3 = 10;
-                kiss = getRandom();
-            }else {
-               loc_y3 = loc_y3 + 5;
-            }
-            if(loc_y1 > h){
-                loc_y1 = 10;
-                hearts = getRandom();
-            }else {
-               loc_y1 = loc_y1 + 11;
-            }
-            if(loc_y4 > h){
-                loc_y4 = 10;
-                bear = getRandom();
-            }else {
-               loc_y4 = loc_y4 + 13;
-            }
 
             //lets do some maths
             loc_x = w / 5;
-
+//
             Paint p = new Paint();
-            p.setColor(Color.WHITE);
+            p.setColor(Color.BLUE);
             p.setStyle(Paint.Style.FILL);
             canvas.drawRect(0, 0, w, h, p);
 
-            canvas.drawBitmap(dove, 10, loc_y, null);
-            canvas.drawBitmap(hearts, loc_x * 1, loc_y4, null);
-            canvas.drawBitmap(love, loc_x * 2, loc_y2, null);
-            canvas.drawBitmap(kiss, loc_x * 3, loc_y1, null);
-            canvas.drawBitmap(bear, loc_x * 4, loc_y3, null);
+            if(loc_y > h){
+                loc_y = 10;
+                y=(y>4)?0:y+1;
+
+            }else {
+                loc_y = loc_y + 7;
+                canvas.drawBitmap(getRandom(y), 10, loc_y, null);
+            }
+            if(loc_y2 > h){
+                loc_y2 = 10;
+                y2=(y2>4)?0:y2+1;
+            }else {
+                loc_y2 = loc_y2 + 9;
+                canvas.drawBitmap(getRandom(y2), loc_x * 2, loc_y2, null);
+
+            }
+            if(loc_y3 > h){
+                loc_y3 = 10;
+                y3=(y3>4)?0:y3+1;
+            }else {
+                loc_y3 = loc_y3 + 5;
+                canvas.drawBitmap(getRandom(y3), loc_x * 4, loc_y3, null);
+            }
+            if(loc_y1 > h){
+                loc_y1 = 10;
+                y1=(y1>1)?0:y1+1;
+            }else {
+                loc_y1 = loc_y1 + 11;
+                canvas.drawBitmap(getRandom(y1), loc_x * 3, loc_y1, null);
+            }
+            if(loc_y4 > h){
+                loc_y4 = 10;
+                y4=(y4>4)?0:y4+1;
+            }else {
+                loc_y4 = loc_y4 + 13;
+                canvas.drawBitmap(getRandom(y4), loc_x * 1, loc_y4, null);
+            }
+
 
             sHolder.unlockCanvasAndPost(canvas);
 
         }
     }
 
-    public Bitmap getRandom() {
+    public Bitmap getRandom(int val) {
+        if(val==5){
+            val=0;
+        }
         Bitmap[] array = {dove,hearts,kiss,love,bear};
-        int rnd = new Random().nextInt(array.length);
-        Log.v("randomval",String.valueOf(rnd));
-        return array[rnd];
+        return array[val];
     }
 //
 //    private float yval(int i) {
