@@ -18,4 +18,14 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="145dp"
         android:src="@drawable/a2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animate"
+        android:id="@+id/button4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="69dp"
+        android:onClick="animateView" />
 </RelativeLayout>
