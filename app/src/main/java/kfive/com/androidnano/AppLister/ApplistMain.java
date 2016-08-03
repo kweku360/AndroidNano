@@ -49,7 +49,7 @@ public class ApplistMain extends Activity {
 
         //gView = (GridView) findViewById(R.id.gridView);
 
-        gLayout = (LinearLayout) findViewById(R.id.gridLayout);x
+        gLayout = (LinearLayout) findViewById(R.id.gridLayout);
         sContainer = (LinearLayout) findViewById(R.id.al_staticcontainer);
         final WallpaperManager wallpaperManager = WallpaperManager.getInstance(this);
         final Drawable wallpaperDrawable = wallpaperManager.getDrawable();
