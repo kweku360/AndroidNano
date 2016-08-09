@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "243329368281",
+    "firebase_url": "https://actbase-b7fd5.firebaseio.com",
+    "project_id": "actbase-b7fd5",
+    "storage_bucket": "actbase-b7fd5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243329368281:android:ddebf09f635d800a",
+        "android_client_info": {
+          "package_name": "kfive.com.androidnano"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243329368281-9etkdvs9ergtbuabtpun0qjuf1e09haf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3BZyvDDbeNOMQfQnpM2wAFBecyCLpfSg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
