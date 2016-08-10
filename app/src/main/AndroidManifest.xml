@@ -16,7 +16,7 @@
         <activity android:name=".AppVault.AppVaultMain" />
         <activity android:name=".budplayer.BmPlayer" />
         <activity android:name=".RxAndroid.RxTest" />
-        <activity android:name=".Animations.AnimDrawing"></activity>
+        <activity android:name=".Animations.AnimDrawing" />
         <activity android:name=".Animations.Animations">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".firebase.SimpleSignin"></activity>
+        <activity android:name=".firebase.AdminSection"></activity>
     </application>
 
 </manifest>
